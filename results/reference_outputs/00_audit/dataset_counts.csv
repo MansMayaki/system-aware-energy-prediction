@@ -1,0 +1,44 @@
+arch,n_configurations,breakdown,gpu_model,strategy,gpus
+bert,131,arch,,,
+gpt,562,arch,,,
+,304,gpu_model,NVIDIA A100-SXM4-40GB,,
+,325,gpu_model,NVIDIA GeForce RTX 2080 Ti,,
+,49,gpu_model,Tesla T4,,
+,15,gpu_model,Tesla V100-PCIE-16GB,,
+,207,strategy,,Baseline,
+,448,strategy,,FSDP,
+,38,strategy,,TP,
+bert,39,arch x strategy,,Baseline,
+bert,54,arch x strategy,,FSDP,
+bert,38,arch x strategy,,TP,
+gpt,168,arch x strategy,,Baseline,
+gpt,394,arch x strategy,,FSDP,
+,76,gpu_model x strategy,NVIDIA A100-SXM4-40GB,Baseline,
+,228,gpu_model x strategy,NVIDIA A100-SXM4-40GB,FSDP,
+,100,gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,Baseline,
+,187,gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,FSDP,
+,38,gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,TP,
+,16,gpu_model x strategy,Tesla T4,Baseline,
+,33,gpu_model x strategy,Tesla T4,FSDP,
+,15,gpu_model x strategy,Tesla V100-PCIE-16GB,Baseline,
+bert,24,arch x gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,Baseline,
+bert,54,arch x gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,FSDP,
+bert,38,arch x gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,TP,
+bert,15,arch x gpu_model x strategy,Tesla V100-PCIE-16GB,Baseline,
+gpt,76,arch x gpu_model x strategy,NVIDIA A100-SXM4-40GB,Baseline,
+gpt,228,arch x gpu_model x strategy,NVIDIA A100-SXM4-40GB,FSDP,
+gpt,76,arch x gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,Baseline,
+gpt,133,arch x gpu_model x strategy,NVIDIA GeForce RTX 2080 Ti,FSDP,
+gpt,16,arch x gpu_model x strategy,Tesla T4,Baseline,
+gpt,33,arch x gpu_model x strategy,Tesla T4,FSDP,
+,207,gpus,,,1.0
+,176,gpus,,,2.0
+,234,gpus,,,4.0
+,76,gpus,,,6.0
+bert,39,arch x gpus,,,1.0
+bert,24,arch x gpus,,,2.0
+bert,68,arch x gpus,,,4.0
+gpt,168,arch x gpus,,,1.0
+gpt,152,arch x gpus,,,2.0
+gpt,166,arch x gpus,,,4.0
+gpt,76,arch x gpus,,,6.0

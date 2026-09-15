@@ -1,0 +1,26 @@
+{
+  "released_file": "data/configurations.csv",
+  "configuration_rows": 693,
+  "unique_exact_configurations": 693,
+  "configuration_families": 246,
+  "workload_families_strict": 135,
+  "sum_n_runs": 934.0,
+  "gpu_models": [
+    "NVIDIA A100-SXM4-40GB",
+    "NVIDIA GeForce RTX 2080 Ti",
+    "Tesla T4",
+    "Tesla V100-PCIE-16GB"
+  ],
+  "architectures": [
+    "bert",
+    "gpt"
+  ],
+  "strategies": [
+    "Baseline",
+    "FSDP",
+    "TP"
+  ],
+  "power_correction_values": [
+    1.0
+  ]
+}
