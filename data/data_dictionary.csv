@@ -1,0 +1,59 @@
+column,description,unit,availability_or_role
+gpu_model,GPU platform identifier,categorical,pre-run
+arch,Model-family label (BERT or GPT),categorical,pre-run
+model,Controlled model-architecture identifier,categorical,pre-run
+framework,Execution-strategy label retained from source table,categorical,pre-run
+gpus,Number of GPUs used by the execution,count,pre-run
+max_length,Configured maximum sequence length,tokens,pre-run
+batch_size,Configured per-process/per-loader batch-size field used in the experiments,examples,pre-run
+seq_len_batch,Observed/effective sequence-length field retained from the run summary,tokens,post-run/derived
+grad_accum,Gradient-accumulation factor,count,pre-run
+num_layers,Transformer depth,count,pre-run
+hidden_size,Hidden dimension,count,pre-run
+heads,Number of attention heads,count,pre-run
+ff,Feed-forward hidden dimension,count,pre-run
+task,Training task/dataset label,categorical,pre-run
+fp16,FP16 training indicator,boolean,pre-run
+bf16,BF16 training indicator,boolean,pre-run
+power_correction,Multiplicative correction applied to CodeCarbon energy in the source pipeline,factor,pre-run/configuration
+energy_consumed_kWh,Primary CodeCarbon operational-energy target after source-pipeline correction,kWh,post-run
+duration_s,Measured active training duration,seconds,post-run
+tokens_seen,Processed token count recorded for the execution,tokens,post-run
+tokens_per_sec_run,Run-level throughput,tokens/s,post-run
+FLOPs,Total FLOP proxy retained in the analysis table,FLOPs,derived
+params_calc,Calculated model parameter count,parameters,derived/pre-run
+M_proxy,Primary memory-related workload descriptor,arbitrary workload units,derived
+flops_per_token_proxy,Approximate FLOPs per processed token,FLOPs/token,derived
+eta_h_proxy,Execution-efficiency proxy retained from source runs,ratio,post-run
+n_runs,Number of repeated source executions represented by the configuration row,count,aggregation metadata
+median_n_epochs,Median number of epochs represented by aggregated source executions,epochs,aggregation metadata
+T1,Matched/reference single-GPU duration field used in source processing,seconds,post-run/derived
+speed_up,Throughput/runtime speed-up relative to reference,ratio,post-run/derived
+parallel_efficiency,Observed multi-GPU scaling-efficiency variable used as eta_h,ratio,post-run/derived
+strategy,"Execution strategy (Baseline, FSDP, TP)",categorical,pre-run
+memory,Alternative/raw memory-demand descriptor retained from source processing,arbitrary workload units,derived
+compute,Compute-demand descriptor C used in the reduced-form model,arbitrary compute units,derived
+log_energy_consumed_kWh,Natural logarithm of energy_consumed_kWh,log(kWh),derived
+log_parallel_efficiency,Natural logarithm of parallel_efficiency,log ratio,derived
+log_FLOPs,Natural logarithm of FLOPs,log FLOPs,derived
+log_params_calc,Natural logarithm of params_calc,log parameters,derived
+log_tokens_seen,Natural logarithm of tokens_seen,log tokens,derived
+log_speed_up,Natural logarithm of speed_up,log ratio,derived
+log_M_proxy,Natural logarithm of M_proxy,log workload units,derived
+log_compute,Natural logarithm of compute,log compute units,derived
+log_memory,Natural logarithm of memory,log workload units,derived
+log_AI,Natural logarithm of arithmetic-intensity-style descriptor retained from source processing,log ratio,derived
+log_energy,Canonical natural-log energy variable used by analysis scripts,log(kWh),derived
+log_C,Canonical natural-log compute descriptor used by analysis scripts,log compute units,derived
+log_M,Canonical natural-log memory-related descriptor used by analysis scripts,log workload units,derived
+log_eta,Canonical natural-log execution-efficiency variable used by analysis scripts,log ratio,derived
+log_duration,Natural logarithm of duration_s,log seconds,derived
+log_tokens,Natural logarithm of tokens_seen,log tokens,derived
+log_total_flops,Natural logarithm of total FLOPs proxy,log FLOPs,derived
+device_seconds,duration_s multiplied by GPU count,GPU-seconds,post-run/derived
+log_device_seconds,Natural logarithm of device_seconds,log GPU-seconds,derived
+log_gpus,Natural logarithm of GPU count,log count,derived
+log2_gpus,Base-2 logarithm of GPU count,log2 count,derived
+config_family_id,Grouping identifier that fixes workload and hardware while excluding strategy and GPU count,identifier,derived
+workload_family_id,"Stricter grouping identifier that excludes hardware, strategy, and GPU count",identifier,derived
+exact_config_id,Exact configuration identifier including strategy and GPU count,identifier,derived

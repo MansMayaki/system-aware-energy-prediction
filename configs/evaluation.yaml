@@ -1,0 +1,12 @@
+seed: 2026
+outer_splits: 20
+test_size: 0.30
+primary_group_mode: config_family
+strict_group_mode: workload_family
+inner_group_folds: 5
+conformal_alpha: 0.05
+bootstrap_resamples: 4000
+settings:
+  - bert
+  - gpt
+  - pooled
