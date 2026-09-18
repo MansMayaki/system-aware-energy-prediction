@@ -125,7 +125,7 @@ Representative median configuration-family-disjoint held-out R2 values in the in
 
 ## Anonymity
 
-This peer-review artifact intentionally omits author identity, affiliation, acknowledgments, personal cluster usernames, Git history, and non-anonymous repository URLs. Before uploading a modified version, run `scripts/check_anonymity.sh` and inspect the output manually.
+This peer-review artifact intentionally omits author identity, affiliation, acknowledgments, personal cluster usernames, Git history, and non-anonymous repository URLs.
 
 ## Review-use notice
 
